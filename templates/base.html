@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <a href='/blog'>Main Blog Page  </a>
+        <a href='/newpost'>Add a Blog Entry</a>
+        <style>
+            .error {
+                color: red;
+            }
+            h1 {
+                color: green;
+                text-align: center;
+            }
+            ul.no_bullets {
+                list-style-type: none;
+                margin: 0;
+                padding: 10;
+            }
+            input.large_square {
+                width: 30%;
+                height: 150px;
+                padding:12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box
+            }
+            a{
+                color:blueviolet;
+                font-style: italic
+            }
+        </style>
+
+    </head>
+<body>
+
+    {% block content %}
+    
+    {% endblock %}
+
+</body>
+</html>
