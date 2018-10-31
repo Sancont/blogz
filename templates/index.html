@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{page_title}}</h1>
+    
+    {% if users|length == 0 %}
+    <p>No bloggers yet</p>
+    {% else %}
+
+        <ul class='no_bullets'>
+            {% for user in users %}
+            <li><b><a href='/blog?user_id={{user.id}}' >   {{user.username}}  </a> </b>
+                <br>
+                
+            </li>
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+
+   
+{% endblock %}

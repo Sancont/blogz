@@ -3,22 +3,42 @@
 {% block content %}
     <h1>{{page_title}}</h1>
     
-    <hr />
+    
 
     {% if blogs|length == 0 %}
     <p>No blogs yet</p>
     {% else %}
-
-        <ul class='no_bullets'>
-            {% for blog in blogs %}
-            <li><b><a href='/post?blog_id={{blog.id}}' >   {{blog.title}}  </a> </b>
+        {% if author %}
+            <ul class='no_bullets'>
+            
+                {% for blog in blogs %}
+            
+                <li><b><a href='/post?blog_id={{blog.id}}' >   {{blog.title}}  </a> </b>
                 <br>
                 {{blog.text}}
+                <br>
+                written by {{user.username}}
                 <br><br>
-            </li>
-            {% endfor %}
-        </ul>
-
+                </li>
+                {% endfor %}  
+            </ul>
+        
+        {% else %}
+            <ul class='no_bullets'>
+            
+                {% for blog in blogs %}
+            
+            
+                <li><b><a href='/post?blog_id={{blog.id}}' >   {{blog.title}}  </a> </b>
+                <br>
+                {{blog.text}}
+                <br>
+                written by {{blog.owner_id}} {{user.username}} 
+                <br><br>
+                </li>
+                {% endfor %}  
+            </ul>
+        {% endif %}
     {% endif %}
 
     
