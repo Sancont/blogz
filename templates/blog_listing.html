@@ -17,7 +17,7 @@
                 <br>
                 {{blog.text}}
                 <br>
-                written by {{user.username}}
+                written by <a href="blog?user_id={{blog.owner.id}}">{{user.username}}</a>
                 <br><br>
                 </li>
                 {% endfor %}  
@@ -33,7 +33,7 @@
                 <br>
                 {{blog.text}}
                 <br>
-                written by {{blog.owner_id}} {{user.username}} 
+                written by <a href="blog?user_id={{blog.owner.id}}">{{blog.owner.username}}</a>
                 <br><br>
                 </li>
                 {% endfor %}  

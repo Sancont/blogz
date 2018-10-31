@@ -156,10 +156,6 @@ def blog():
             author = ''
             blogs = Blog.query.all()
             users = User.query.join(Blog, User.id == Blog.owner_id).all()
-            #users = Blog.query.join(User, User.id == Blog.owner_id ).filter_by(User.id==Blog.owner_id)
-            print ('******************')
-            print (users, blogs)
-            print ('******************')
             return render_template('blog_listing.html',title="All Posts", page_title="All Blog Posts", blogs=blogs, user=users, author=author)
     
 @app.route('/', methods=['GET','POST'])
